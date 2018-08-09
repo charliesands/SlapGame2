@@ -1,5 +1,5 @@
 export default class Target {
-  constructor(name, health, img, headDmg, bodyDmg, upperCutDmg, biteEarMod, pedsMod, cheatCodeMod) {
+  constructor(name, health, img, headDmg, bodyDmg, upperCutDmg) {
     this.name = name || ''
     this.health = health || 1000
     this.img = img || ''
@@ -8,32 +8,21 @@ export default class Target {
       body: bodyDmg,
       upperCut: upperCutDmg
     }
-    //   this.items = [{
-    //     name = name,
-    //     modifier = modifier,
-
-
-
-    //     biteEar: biteEarMod,
-    //     peds: pedsMod,
-    //     cheatCode: cheatCodeMod
-    //   }
-    // ]
     this.dead = false
     this.hits = 0
   }
 
   attack(type) {
-    this.dead) {
+    if (this.dead) {
       return
-
-      if (this.damages[type]) {
-        this.health -= this.damages[type]
-        this.hits++
-        if (this.health <= 0) {
-          this.health = 0
-          this.dead = true
-        }
+    }
+    if (this.damages[type]) {
+      this.health -= this.damages[type]
+      this.hits++
+      if (this.health <= 0) {
+        this.health = 0
+        this.dead = true
       }
     }
   }
+}
